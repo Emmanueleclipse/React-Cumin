@@ -1,17 +1,11 @@
-.header {
+.minediv {
   @apply w-full min-h-screen bg-gray-900 text-gray-400;
 }
-
 .navbar {
-  @apply h-10 w-full flex items-center relative py-10 px-4 xxl:max-w-9xl xxl:mx-auto;
+  @apply flex items-center relative justify-center;
 }
-
-.navbar_logo {
-  @apply md:mr-7 xxl:absolute xxl:-left-12;
-}
-
 .tabNav {
-  @apply hidden md:flex h-full items-center;
+  @apply sm:hidden md:flex h-full items-center;
 }
 
 .navbar_nav {
@@ -24,35 +18,27 @@
 
 .subnav_link:link,
 .subnav_link:visited {
-  @apply -mt-2 mr-7 lg:mr-0 text-pink-800;
+  @apply mr-7 lg:mr-0 text-pink-800;
   font-family: "helveticaBold";
   font-weight: normal;
   font-style: normal;
-  font-size: calc(16px + (30 - 16) * ((100vw - 320px) / (1920 - 320)));
+  font-size: calc(16px + (41 - 16) * ((100vw - 320px) / (1920 - 320)));
   transition: all 0.3s ease;
 }
-
-.subnav_link:hover,
-.subnav_link:active {
-}
-
 .navbar_link_mobile {
   @apply py-1 block;
 }
 
-.navItem {
-}
-
 .navItemDesktop {
-  @apply mr-7;
+  @apply mr-10;
 }
 
 .navbar_link:link,
 .navbar_link:visited {
   font-family: "helveticaBold";
-  font-weight: normal;
-  font-style: normal;
-  font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1920 - 320)));
+  font-weight: bold;
+  font-style: bold;
+  font-size: 30px;
   transition: all 0.3s ease;
 }
 
@@ -63,17 +49,15 @@
 
 .headerBadge {
   @apply flex items-center text-pink-800 text-base;
-  font-size: calc(12px + (24 - 12) * ((100vw - 320px) / (1920 - 320)));
+  font-size: 35px;
+  font-family: 'helveticaBold';
 }
 
 .headerHeadlineText {
   font-family: "helveticaBold";
   font-weight: normal;
   font-style: normal;
-  margin-top: 8px;
   color: #fff;
-  font-size: calc(20px + (100 - 20) * ((100vw - 320px) / (1920 - 320)));
-  line-height: 115%;
 }
 
 .headerSubHeadline {
@@ -81,21 +65,34 @@
   font-weight: normal;
   font-style: normal;
   /* margin-top: 12px;s */
-  font-size: calc(14px + (32 - 14) * ((100vw - 320px) / (1920 - 320)));
+  font-size: 50px;
 }
 
 .ctaButton {
-  font-family: "helveticaExtraBold";
-  font-weight: normal;
-  font-style: normal;
+  font-family: "BergenMonoBold";
+  font-weight: bold;
+  padding:22px;
 }
 
-.heroLogoBig svg {
-  width: 65px;
-  height: 85px;
+@media screen and (max-width: 1200px) {
+
+  .headerHeadlineText{
+    font-size: 100px ;
+  }
+  
+}
+@media screen and (max-width: 1001px) {
+  .heroLogoBig{
+   display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  .tabNav{
+   display: none;
+  }
 }
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .heroLogoBig svg {
     width: 112px;
     height: 163px;
@@ -107,4 +104,6 @@
     width: 163px;
     height: 200px;
   }
-}
+} */
+
+

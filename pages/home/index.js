@@ -8,6 +8,7 @@ import { ReactComponent as LogoBig } from "assets/images/logo_big.svg";
 import donutIcon from "assets/images/donut.svg";
 import styles from "./style.module.css";
 import clsx from "clsx";
+import erc from "../../assets/images/erc.svg";
 
 const Home = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -52,68 +53,80 @@ const Home = () => {
   };
 
   return (
-    <>
-      {/* Header */}
-      <header className={styles.header}>
-        {/* Navbar start */}
-        <nav className={styles.navbar}>
-          <div className={styles.navbar_logo}>
-            <Link to="/">
-              <LogoSmall />
-            </Link>
+    <div className={styles.minediv}>
+      <header className={"container"}>
+        <nav className={styles.navbar + " navbar"}>
+          <div className={styles.navbar_logo + " navbar_logo logo"}>
+            <div className="logo">
+              <Link to="/">
+                <LogoSmall />
+              </Link>
+            </div>
           </div>
 
           <ul className={styles.tabNav}>
             <li className={clsx(styles.navItem, styles.navItemDesktop)}>
-              <Link to="/" className={styles.navbar_link}>
+              <Link to="/" className={styles.navbar_link + " hidden sm:block"}>
                 Home
               </Link>
             </li>
-
             <li className={clsx(styles.navItem, styles.navItemDesktop)}>
-              <Link to="/contract" className={styles.navbar_link}>
+              <Link
+                to="/contract"
+                className={styles.navbar_link + " hidden lg:block"}
+              >
                 Contract
               </Link>
             </li>
-
             <li className={clsx(styles.navItem, styles.navItemDesktop)}>
-              <Link to="/tokenomics" className={styles.navbar_link}>
+              <Link
+                to="/tokenomics"
+                className={styles.navbar_link + " hidden sm:block"}
+              >
                 Tokenomics
               </Link>
             </li>
-
             <li className={clsx(styles.navItem, styles.navItemDesktop)}>
-              <Link to="/roadmap" className={styles.navbar_link}>
+              <Link
+                to="/roadmap"
+                className={styles.navbar_link + " hidden lg:block"}
+              >
                 Roadmap
               </Link>
             </li>
-
             <li className={clsx(styles.navItem, styles.navItemDesktop)}>
-              <Link to="/platform" className={styles.navbar_link}>
+              <Link
+                to="/platform"
+                className={styles.navbar_link + " hidden sm:block"}
+              >
                 Platform
               </Link>
             </li>
-
             <li
               className={clsx(
                 styles.navItem,
                 styles.navItemDesktop,
-                "hidden lg:block"
+                "navItemDesktop"
               )}
             >
-              <Link to="/blog" className={styles.navbar_link}>
+              <Link
+                to="/blog"
+                className={styles.navbar_link + " hidden lg:block"}
+              >
                 Blog
               </Link>
             </li>
-
             <li
               className={clsx(
                 styles.navItem,
                 styles.navItemDesktop,
-                "hidden lg:block"
+                "hidden xl:block"
               )}
             >
-              <Link to="/media" className={styles.navbar_link}>
+              <Link
+                to="/media"
+                className={styles.navbar_link + " hidden lg:block"}
+              >
                 Media
               </Link>
             </li>
@@ -125,7 +138,7 @@ const Home = () => {
             animate={isMobileMenuOpen ? "opened" : "closed"}
             initial="initial"
           >
-            <motion.li variants={linkVariants} className="block md:hidden">
+            <motion.li variants={linkVariants} className="block lg:hidden">
               <Link
                 to="/"
                 className={clsx(styles.navbar_link, styles.navbar_link_mobile)}
@@ -133,7 +146,7 @@ const Home = () => {
                 Home
               </Link>
             </motion.li>
-            <motion.li variants={linkVariants} className="block md:hidden">
+            <motion.li variants={linkVariants} className="block lg:hidden">
               <Link
                 to="/contract"
                 className={clsx(styles.navbar_link, styles.navbar_link_mobile)}
@@ -141,7 +154,7 @@ const Home = () => {
                 Contract
               </Link>
             </motion.li>
-            <motion.li variants={linkVariants} className="block md:hidden">
+            <motion.li variants={linkVariants} className="block lg:hidden">
               <Link
                 to="/tokenomics"
                 className={clsx(styles.navbar_link, styles.navbar_link_mobile)}
@@ -149,7 +162,7 @@ const Home = () => {
                 Tokenomics
               </Link>
             </motion.li>
-            <motion.li variants={linkVariants} className="block md:hidden">
+            <motion.li variants={linkVariants} className="block lg:hidden">
               <Link
                 to="/roadmap"
                 className={clsx(styles.navbar_link, styles.navbar_link_mobile)}
@@ -157,7 +170,7 @@ const Home = () => {
                 Roadmap
               </Link>
             </motion.li>
-            <motion.li variants={linkVariants} className="block md:hidden">
+            <motion.li variants={linkVariants} className="block lg:hidden">
               <Link
                 to="/platform"
                 className={clsx(styles.navbar_link, styles.navbar_link_mobile)}
@@ -183,34 +196,39 @@ const Home = () => {
             </motion.li>
           </motion.ul>
 
-          <div className={styles.navbar_subnav}>
+          <div className={styles.navbar_subnav + " swap"}>
             <Link
               to="/"
               className={clsx(styles.subnav_link, "flex items-center")}
             >
-              <img src={donutIcon} alt="donut" className="mr-1" />
+              <img src={donutIcon} alt="donut" className="mr-3" />
               Swap
             </Link>
             <HamburgerMenuButton
               isOpen={isMobileMenuOpen}
               onClick={toggleMobileMenu}
-              className="block lg:hidden"
+              className="block lg:hidden ml-5 hambur"
             />
           </div>
         </nav>
-        {/* Navbar end */}
+      </header>
 
-        {/* Hero start */}
-        <div className="py-10 px-8 md:px-24 text-left xxl:px-4 xxl:max-w-9xl xxl:mx-auto">
-          <div className="w-full flex items-center">
-            <div className="mr-1 flex-grow">
-              <p className={styles.headerBadge}>
-                <span className="block">introducing cuminu</span>
-                <span className="block ml-2 border border-pink-800 px-2 rounded-md">
-                  erc-20
-                </span>
-              </p>
-              <h1 className={styles.headerHeadlineText}>
+      <div className={"container"}>
+        <div className={"flex items-center pdcontainer"}>
+          <div className="mr-1 flex-grow">
+            <p className={styles.headerBadge + "headerBadge"}>
+              <div className="block uppercase font-bold">
+                introducing cuminu
+              </div>
+              <div className="ml-3">
+                <img src={erc} alt="erc" />
+              </div>
+               {/* <div className="block ml-3 text-sm border border-pink-800 px-2 py-0.5 rounded-md">
+                ERC-20
+              </div> */}
+            </p>
+            <div className="md:flex md:justify-between md:items-center">
+              <h1 className={styles.headerHeadlineText + " headerHeadlineText"}>
                 <span className="block">The token that</span>
                 <span className="block">powers the</span>
                 <span
@@ -223,54 +241,62 @@ const Home = () => {
                 >
                   <TypeWritter
                     options={{
-                      strings: ["community"],
+                      strings: ["Cummuniti"],
+                      cursor: "_",
                       autoStart: true,
                       loop: true,
+                      pauseFor: 500,
+                      deleteSpeed: 10,
+                      delay: 10,
                     }}
                   />
                 </span>
                 <span className="block">platform</span>
               </h1>
+              <div className={styles.heroLogoBig + "heroLogoBig"}>
+                <LogoBig />
+              </div>
             </div>
-
-            <div className={styles.heroLogoBig}>
-              <LogoBig />
-            </div>
-          </div>
-
-          <div className="md:flex md:justify-between md:items-center">
-            <h2 className={styles.headerSubHeadline}>
-              <span className="block">
-                Join us as we{" "}
-                <span
-                  className="text-white"
-                  style={{
-                    fontFamily: "helveticaExtraBold",
-                    fontWeight: "normal",
-                    fontStyle: "normal",
-                  }}
-                >
-                  revolutionize
+            <div className="md:flex md:justify-between md:items-center justify-center fMs">
+              <h2 className={styles.headerSubHeadline}>
+                <span className="block">
+                  Join us as we{" "}
+                  <span
+                    className="text-white"
+                    style={{
+                      fontFamily: "helveticaExtraBold",
+                      fontWeight: "extra bold",
+                      fontStyle: "extra bold",
+                    }}
+                  >
+                    revolutionize
+                  </span>
                 </span>
-              </span>
-              <span className="block">adult entertainment forever.</span>
-            </h2>
-            <div className="mt-7 text-center md:mt-0">
+                <span className="block">adult entertainment forever.</span>
+              </h2>
               <button
-                className={clsx(
-                  "bg-pink-800 text-gray-900 py-2 px-4 rounded-lg text-xl uppercase",
-                  styles.ctaButton
-                )}
-              >
-                <span className="lg:hidden">invest</span>
-                <span className="hidden lg:block">start investing</span>
-              </button>
+                  className={clsx(
+                    "bg-pink-800 text-gray-900 mt-10 ml-auto mr-auto md:mr-0 rounded-lg text-xl uppercase block",
+                    styles.ctaButton
+                  )}
+                >
+                  {/*  <span className="md:hidden">invest</span> */}
+                  <span
+                    style={{
+                      fontFamily: "BergenMonoBold",
+                      fontWeight: "bold",
+                      fontStyle: "bold",
+                      fontSize: "30px",
+                    }}
+                  >
+                    start investing
+                  </span>
+                </button>
             </div>
           </div>
         </div>
-        {/* Hero End */}
-      </header>
-    </>
+      </div>
+    </div>
   );
 };
 
